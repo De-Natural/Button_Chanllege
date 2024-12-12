@@ -28,7 +28,7 @@ btn.addEventListener('mouseenter', () => {
         return; // Exit the function if inputs are empty
     }
 
-    // Get parent div dimensions
+    // Get parent container dimensions
     const parentRect = moveDiv.getBoundingClientRect();
 
     // Get button dimensions
@@ -43,22 +43,11 @@ btn.addEventListener('mouseenter', () => {
     let x = Math.random() * maxX;
     let y = Math.random() * maxY;
 
-    // Define edge margin to prevent touching the edges
-    const edgeMargin = 100; // Margin from the edge to avoid touching
-
-    // Adjust y position if it goes beyond the allowed range
-    if (y < edgeMargin) {
-        y = edgeMargin;
-    } else if (y > maxY - edgeMargin) {
-        y = maxY - edgeMargin;
-    }
-
-    // Adjust x position if it goes beyond the allowed range
-    if (x < edgeMargin) {
-        x = edgeMargin;
-    } else if (x > maxX - edgeMargin) {
-        x = maxX - edgeMargin;
-    }
+    // Ensure the button stays within the bounds of the parent
+    if (x < 0) x = 0; // Prevent going beyond the left edge
+    if (y < 0) y = 0; // Prevent going beyond the top edge
+    if (x > maxX) x = maxX; // Prevent going beyond the right edge
+    if (y > maxY) y = maxY; // Prevent going beyond the bottom edge
 
     // Generate random 3D rotation
     const rotateX = Math.random() * 270 - 180;
@@ -67,8 +56,3 @@ btn.addEventListener('mouseenter', () => {
     // Apply transformations
     btn.style.transform = `translate3d(${x}px, ${y}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });
-
-
-
-
-

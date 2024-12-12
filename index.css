@@ -5,10 +5,11 @@
 }
 
 .container{
-    height: 500px;
-    width: 80%;
+    height: 100vh;
+    width: 100%;
     margin: 0 auto;
     padding: 10px;
+    background-color: aliceblue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,12 +17,12 @@
 }
 
 form{
-    height: 380px;
-    width: 280px;
+    height: 400px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: azure;
+    background-color: #ffffff;
     box-shadow: 2px 3px 10px rgb(209, 205, 205);
     border-radius: 8px;
     gap: 10px;
@@ -48,10 +49,10 @@ label{
 }
 .move {
     height: 180px;
-    width: 80%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     position: relative;
     overflow: hidden;
     perspective: 1000px;
@@ -61,6 +62,7 @@ button {
     height: 30px;
     width: 120px;
     border: none;
+    margin-top: 20px;
     background-color: blue;
     color: white;
     cursor: pointer;
@@ -69,13 +71,108 @@ button {
     box-shadow: 1px 2px 3px black;
     transform-origin: center;
     transition: transform 0.3s ease;
+    transition: all 0.5s;
     box-shadow: 
     inset 3px 3px 6px rgba(0, 0, 0, 0.5),
     inset -3px -3px 6px rgba(255, 255, 255, 0.5),
     5px 7px 5px rgba(0, 0, 0, 0.4);
     transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
 }
-/* -2px -2px 5px rgba(0, 0, 0, 0.4) */
+/* button::before, button::after {
+    position: absolute;
+    content: '';
+    transition: all 0.5s;
+    background-color: blue;
+}
+button::before {
+    bottom: -25px;
+    height: 25px; 
+    width: 100px;
+    left: 10px; 
+    transform: skewX(45deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+} */
+
+/* Bold effect for the right skew */
+/* button::after {
+    right: -25px;
+    height: 25px;
+    bottom: -15px;
+    transform: skewX(45deg);
+    box-shadow: 8px 0 15px rgba(0, 0, 0, 0.5);
+}
+button:active {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+button:active::before {
+    bottom: -15px;
+    height: 15px; 
+    left: 6px;
+}
+button:active::after {
+    right: -15px;
+    height: 15px; 
+    bottom: -10px;
+} */
+
+.button {
+    height: 30px;
+    width: 120px;
+    display: inline-block;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+    background-color: blue;
+    position: relative;
+    overflow: hidden; 
+    transition: all 0.5s;
+}
+
+.button::before, button::after {
+    position: absolute;
+    content: '';
+    transition: all 0.5s;
+    background-color: blue; /* Match the button color */
+}
+
+
+.button::before {
+    bottom: -25px; /* Increased offset for more depth */
+    height: 25px; /* Increased height for a bolder look */
+    width: 100px;
+    left: 10px; /* Adjusted for a more centered appearance */
+    transform: skewX(45deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+}
+
+
+.button::after {
+    right: -25px; /* Increased offset for more depth */
+    height: 70px; /* Increased height for a bolder look */
+    bottom: -15px; /* Adjusted for alignment */
+    transform: skewX(45deg);
+    box-shadow: 8px 0 15px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+}
+
+.button:active {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button:active::before {
+    bottom: -15px; /* Adjust for a more subtle shift */
+    height: 15px; /* Slightly reduced height on active */
+    left: 6px;
+}
+
+.button:active::after {
+    right: -15px; /* Adjusted for alignment */
+    height: 15px; /* Consistent height on active */
+    bottom: -10px;
+}
 
 
 @media screen and (max-width: 960px) {
