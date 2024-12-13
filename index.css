@@ -31,7 +31,9 @@ input{
     height: 30px;
     outline: none;
     text-indent: 10px;
-    background-color: transparent;
+    border: none;
+    background-color: lightgray;
+    color: black;
 }
 h2{
   margin: 0 auto;
@@ -116,63 +118,6 @@ button:active::after {
     bottom: -10px;
 } */
 
-.button {
-    height: 30px;
-    width: 120px;
-    display: inline-block;
-    color: white;
-    font-family: sans-serif;
-    text-decoration: none;
-    font-size: 12px;
-    text-align: center;
-    background-color: blue;
-    position: relative;
-    overflow: hidden; 
-    transition: all 0.5s;
-}
-
-.button::before, button::after {
-    position: absolute;
-    content: '';
-    transition: all 0.5s;
-    background-color: blue; /* Match the button color */
-}
-
-
-.button::before {
-    bottom: -25px; /* Increased offset for more depth */
-    height: 25px; /* Increased height for a bolder look */
-    width: 100px;
-    left: 10px; /* Adjusted for a more centered appearance */
-    transform: skewX(45deg);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
-}
-
-
-.button::after {
-    right: -25px; /* Increased offset for more depth */
-    height: 70px; /* Increased height for a bolder look */
-    bottom: -15px; /* Adjusted for alignment */
-    transform: skewX(45deg);
-    box-shadow: 8px 0 15px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
-}
-
-.button:active {
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.button:active::before {
-    bottom: -15px; /* Adjust for a more subtle shift */
-    height: 15px; /* Slightly reduced height on active */
-    left: 6px;
-}
-
-.button:active::after {
-    right: -15px; /* Adjusted for alignment */
-    height: 15px; /* Consistent height on active */
-    bottom: -10px;
-}
 
 
 @media screen and (max-width: 960px) {
